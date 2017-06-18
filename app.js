@@ -94,7 +94,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             }
           })
           .then (function(results) {
-            console.log(results);
+            // console.log(results);
             alert('awesome!');
             $scope.formData = {};
             $scope.summaryArray = [];
@@ -110,6 +110,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $scope.clearForm = function() {
       $scope.formData = {};
       $scope.summaryArray = [];
+      $location.url('/basic-info');
     };
 
     //function to get saved profiles

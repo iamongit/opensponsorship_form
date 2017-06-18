@@ -1,0 +1,42 @@
+{
+  "name": "opensponsorship_test",
+  "version": "1.0.0",
+  "description": "Angular multi-step form with persistent state",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamongit/opensponsorship_form.git"
+  },
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "express",
+    "mongoose"
+  ],
+  "author": "Aamir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamongit/opensponsorship_form/issues"
+  },
+  "homepage": "https://github.com/iamongit/opensponsorship_form#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "commitizen": "^2.9.6",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.6",
+    "morgan": "^1.8.2",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

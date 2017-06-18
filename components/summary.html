@@ -1,0 +1,21 @@
+
+<p ng-repeat="obj in summaryArray">
+   <font ng-repeat="(key, value) in obj">
+      {{key | capitalize}} : {{ value }}
+   </font>
+</p>
+
+
+<div class="text-center">
+  <a ui-sref="form.basic-info" class="btn btn-warning">
+  EDIT <span class="glyphicon glyphicon-circle-arrow-right"></span>
+  </a>
+  <br><br>
+  <button type="submit" class="btn btn-success"">SUBMIT</button>
+  <br><br>
+  <a ui-sref="form.basic-info" ng-click="clearForm()" class="btn btn-warning">
+  START OVER
+  <span class="glyphicon glyphicon-circle-arrow-right"></span>
+  </a>
+  <br><br>
+</div>

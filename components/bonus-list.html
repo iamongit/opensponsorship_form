@@ -1,0 +1,11 @@
+<div style="text-align: center" ng-if="showArchives">
+  <br>
+  <b>Names Of Saved Profiles</b>
+  <br><br>
+    <table align="center" border="3" width="400px" bgcolor="CEEDB6">
+      <p ng-repeat="obj in archivesData">
+            {{ obj['name'] }}
+      </p>
+    </table>
+  </h4>
+</div>

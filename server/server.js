@@ -5,6 +5,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var Promise = require('bluebird');
 var envVars = require('../env.json');
+var Profile = require('./dbController.js');
 
 
 var app = express();
@@ -12,7 +13,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 var username = envVars.mlab_username;
-// console.log(username, "uname here")
+console.log(username, "uname here")
 var password = envVars.mlab_password;
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://${username}:${password}@ds131312.mlab.com:31312/opensponsorship`).then(
@@ -29,6 +30,15 @@ app.listen(port, function (error) {
 		console.log('Error connecting server')
 	}
 
+});
+
+app.post('/api/insertProfile', function (req, res) {
+	// console.log(req.body, "req here####")
+	Profile.insertToDB(req, res);
+});
+
+app.get('/api/archives', function(req, res){
+	Profile.getAllProfiles(req, res);
 });
 
 // require('./routes.js')(app, express);

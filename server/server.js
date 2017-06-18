@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 var username = process.env.mlab_username;
-console.log(username, "uname here")
+// console.log(username, "uname here")
 var password = process.env.mlab_password;
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://${username}:${password}@ds131312.mlab.com:31312/opensponsorship`).then(

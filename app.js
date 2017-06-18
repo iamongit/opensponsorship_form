@@ -49,7 +49,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
 
 // our controller for the form
 // =============================================================================
-.controller('formController', function($scope, $http) {
+.controller('formController', function($scope, $http, $location, $window) {
 
     // we will store all of our form data in this object
     $scope.formData = {};
@@ -64,13 +64,21 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $scope.summaryArray = [];
 
     $scope.generateSummary = function(){
-      var objectToArray = [];
-      for(var key in $scope.formData){
-        var obj = {};
-        obj[key] = $scope.formData[key];
-        objectToArray.push(obj);
+      // if($scope.formData.name===undefined) $window.location.hash = '#/components/form/basic-info';
+      //ui-sref="form.summary"
+      if((Object.keys($scope.formData).length === 0) || ($scope.formData[Object.keys($scope.formData)[0]] === "") ) {
+        alert('Form empty, start again!');
+        $location.url('/basic-info');
+      } else {
+        var objectToArray = [];
+        for(var key in $scope.formData){
+          var obj = {};
+          obj[key] = $scope.formData[key];
+          objectToArray.push(obj);
+        }
+        $scope.summaryArray = objectToArray;
+        $window.location.hash = ('#/components/form/summary')
       }
-      $scope.summaryArray = objectToArray;
     };
 
     // function to process the form

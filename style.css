@@ -1,4 +1,47 @@
-#status-buttons                 {  }
-#status-buttons a               { color:#FFF; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
-#status-buttons span            { background:#080808; display:block; height:30px; margin:0 auto 7px; padding-top:5px; width:30px;
-    border-radius:50%; }
+#status-buttons a {
+  color:#ZZZ;
+  display:inline-block;
+  font-size:12px;
+  margin-right:10px;
+  text-transform:uppercase;
+}
+#status-buttons span {
+  background: rgba(0, 188, 212, 0.06);
+  display:block;
+  height:3vh;
+  margin:0 auto 7px;
+  padding-top:5px;
+  width:30px;
+  border-radius:50%;
+}
+
+#status-buttons {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.mui-checkbox {
+    position: relative;
+    display: block;
+    margin-top: 0 !important;
+    margin-bottom: 10px;
+}
+
+.date{
+  margin-top: 10px;
+}
+
+.mui-checkbox>label, .mui-radio>label {
+    padding-left: 0px !important;
+}
+
+.page-heading{
+  color: #3557bf;
+  font-weight: normal;
+  font-family: 'Ultra', sans-serif;
+  font-size: 33px;
+  line-height: 20vh;
+  text-transform: uppercase;
+  text-shadow: 0 2px #d2d5e4, 0 3px #2196F3;
+}

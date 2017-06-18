@@ -1,19 +1,22 @@
-<div class="row">
-<div class="col-sm-8 col-sm-offset-2">
+<div class="mui-container-fluid">
+  <div class="mui-row">
+    <div class="mui-col-md-8 mui-col-md-offset-2">
 
-  <div id="form-container">
+      <div id="form-container">
 
-      <div class="page-header text-center">
-          <h2>OpenSponsorship Test</h2>
+      <div class="page-header mui--text-center">
+          <h2 class="page-heading">OpenSponsorship Test</h2>
 
           <!-- the links to nested states using relative paths -->
           <!-- add the active class if the state matches ui-sref -->
-          <div id="status-buttons" class="text-center">
-              <a ui-sref-active="active" ui-sref=".basic-info"><span>1</span> Basic Info</a>
+          <div id="status-buttons" class="mui--text-center">
+              <a ui-sref-active="active" ui-sref=".basic-info"><span >1</span> Basic Info</a>
               <a ui-sref-active="active" ui-sref=".about"><span>2</span> About</a>
               <a ui-sref-active="active" ui-sref=".social-media"><span>3</span> Social Media</a>
               <a ui-sref-active="active" ui-sref=".bonus-list" ng-click="getArchives()"><span>4</span> Saved Names</a>
           </div>
+          <div class="mui-divider"></div>
+          <br><br>
       </div>
 
       <!-- use ng-submit to catch the form submission and use our Angular function -->
@@ -22,6 +25,7 @@
           <div id="form-views" ui-view></div>
       </form>
 
+      </div>
+    </div>
   </div>
-</div>
 </div>

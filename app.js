@@ -35,10 +35,16 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     // will store all the form data in this object
     $scope.formData = {};
 
-    // function to process the form
+    // function to process the form and save profiles to mongodb
     $scope.processForm = function() {
       alert('Done');
       $scope.formData = {};
+      // incomplete
     };
+
+    $scope.getArchives = function() {
+      // function to get saved profiles
+      // incomplete
+    }
 
 });

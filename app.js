@@ -66,7 +66,8 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $scope.generateSummary = function(){
       // if($scope.formData.name===undefined) $window.location.hash = '#/components/form/basic-info';
       //ui-sref="form.summary"
-      if((Object.keys($scope.formData).length === 0) || ($scope.formData[Object.keys($scope.formData)[0]] === "") ) {
+      console.log(Object.keys($scope.formData).length,$scope.formData[Object.keys($scope.formData)[0]], "validation test" );
+      if((Object.keys($scope.formData).length === 0) || ($scope.formData[Object.keys($scope.formData)[0]] === undefined) ) {
         alert('Form empty, start again!');
         $location.url('/basic-info');
       } else {

@@ -45,3 +45,49 @@
   text-transform: uppercase;
   text-shadow: 0 2px #d2d5e4, 0 3px #2196F3;
 }
+
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.2s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.2s all ease;
+}
+
+/* enter animation */
+#form-views.ng-enter            {
+    -webkit-animation:slideInRight 0.2s both ease;
+	-moz-animation:slideInRight 0.2s both ease;
+	animation:slideInRight 0.2s both ease;
+}
+
+/* leave animation */
+#form-views.ng-leave            {
+    -webkit-animation:slideOutLeft 0.2s both ease;
+	-moz-animation:slideOutLeft 0.2s both ease;
+	animation:slideOutLeft 0.2s both ease;
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+	to 		{ transform: translateX(-100%); }
+}
+@-moz-keyframes slideOutLeft {
+	to 		{ -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes slideOutLeft {
+	to 		{ -webkit-transform: translateX(-100%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+	from 	{ transform:translateX(100%); }
+	to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+	from 	{ -moz-transform:translateX(100%); }
+	to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+	from 	{ -webkit-transform:translateX(100%); }
+	to 		{ -webkit-transform: translateX(0); }
+}

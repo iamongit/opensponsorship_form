@@ -98,6 +98,7 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             alert('awesome!');
             $scope.formData = {};
             $scope.summaryArray = [];
+            $location.url('/basic-info');
           })
           .catch(function(error) {
             console.log(error);

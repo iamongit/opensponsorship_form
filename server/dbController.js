@@ -1,7 +1,7 @@
 var Q = require('q');
 var ProfileModel = require('./DB/models/profileModel.js');
 
-// Promisify mongoose methods with `q` promise library
+// Promisify mongoose methods with `Q` promise library
 var findAllSearches = Q.nbind(ProfileModel.find, ProfileModel);
 var findOne = Q.nbind(ProfileModel.findOne, ProfileModel);
 var saveASearch = Q.nbind(ProfileModel.create, ProfileModel);

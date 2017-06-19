@@ -13,8 +13,8 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 var username = process.env.mlab_username;
-// console.log(username, "uname here")
 var password = process.env.mlab_password;
+
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://${username}:${password}@ds131312.mlab.com:31312/opensponsorship`).then(
   () => { console.log('mongoose connected!')},
@@ -22,7 +22,9 @@ mongoose.connect(`mongodb://${username}:${password}@ds131312.mlab.com:31312/open
 );
 
 app.use(express.static(path.join(__dirname, '../')));
+
 var port = process.env.PORT ||  3000;
+
 app.listen(port, function (error) {
 	if(!error){
 		console.log('OpenSponsorship listening on port ' + port);
@@ -33,7 +35,6 @@ app.listen(port, function (error) {
 });
 
 app.post('/api/insertProfile', function (req, res) {
-	// console.log(req.body, "req here####")
 	Profile.insertToDB(req, res);
 });
 

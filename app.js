@@ -56,19 +56,15 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
     $scope.archivesData = [];
     $scope.showArchives = false;
 
-    // $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
-
-
     //Array to display data in original order rather than alphabetical order -
     // - on using ng-repeat in the summary template
     $scope.summaryArray = [];
 
     $scope.generateSummary = function(){
-      // if($scope.formData.name===undefined) $window.location.hash = '#/components/form/basic-info';
-      //ui-sref="form.summary"
-      console.log(Object.keys($scope.formData).length,$scope.formData[Object.keys($scope.formData)[0]], "validation test" );
-      if((Object.keys($scope.formData).length === 0) || ($scope.formData[Object.keys($scope.formData)[0]] === undefined) ) {
-        alert('Form empty, start again!');
+      // To check if all values have been filled in, there are other methods of
+      // validation too
+      if(Object.values($scope.formData).length < 11) {
+        alert('Form empty or incomplete, please fill in all details!');
         $location.url('/basic-info');
       } else {
         var objectToArray = [];
@@ -105,6 +101,9 @@ angular.module('formApp', ['ngAnimate', 'ui.router'])
             console.log(error);
             alert($scope.errorCodes[error.data]);
           });
+        } else {
+            alert('Form Empty');
+            $location.url('/basic-info');
         }
     };
 
